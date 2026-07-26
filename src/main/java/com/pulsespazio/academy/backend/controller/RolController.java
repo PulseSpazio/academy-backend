@@ -6,6 +6,9 @@ package com.pulsespazio.academy.backend.controller;
 
 import com.pulsespazio.academy.backend.entity.Rol;
 import com.pulsespazio.academy.backend.service.RolService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api/roles")
+@Tag(name = "Roles", description = "Operaciones relacionadas con roles")
 public class RolController {
 
     private final RolService rolService;
@@ -27,12 +31,23 @@ public class RolController {
     }
 
     @GetMapping
+    @Operation(
+            summary = "Consulta todos los roles",
+            description = "Obtiene el catálogo de roles registrados en el sistema"
+    )
     public List<Rol> listar() {
         return rolService.listar();
     }
 
     @GetMapping("/{id}")
-    public Rol buscarPorId(@PathVariable Long id) {
+    @Operation(
+            summary = "Consulta un rol por identificador",
+            description = "Obtiene un rol específico mediante su ID"
+    )
+    public Rol buscarPorId(
+            @Parameter(description = "ID del rol", example = "1")
+            @PathVariable Long id) {
+
         return rolService.buscarPorId(id);
     }
 
