@@ -4,7 +4,7 @@
  */
 package com.pulsespazio.academy.backend.config;
 
-import com.pulsespazio.academy.backend.repository.UsuarioRepository;
+import com.pulsespazio.academy.backend.usuario.repository.UsuarioRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

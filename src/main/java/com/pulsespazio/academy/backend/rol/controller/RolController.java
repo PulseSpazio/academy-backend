@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.pulsespazio.academy.backend.controller;
+package com.pulsespazio.academy.backend.rol.controller;
 
-import com.pulsespazio.academy.backend.entity.Rol;
-import com.pulsespazio.academy.backend.service.RolService;
+import com.pulsespazio.academy.backend.rol.entity.Rol;
+import com.pulsespazio.academy.backend.rol.service.RolService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;

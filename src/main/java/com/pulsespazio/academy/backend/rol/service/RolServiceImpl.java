@@ -1,9 +1,9 @@
-package com.pulsespazio.academy.backend.service.impl;
+package com.pulsespazio.academy.backend.rol.service;
 
-import com.pulsespazio.academy.backend.entity.Rol;
+import com.pulsespazio.academy.backend.rol.entity.Rol;
 import com.pulsespazio.academy.backend.exception.RecursoNoEncontradoException;
-import com.pulsespazio.academy.backend.repository.RolRepository;
-import com.pulsespazio.academy.backend.service.RolService;
+import com.pulsespazio.academy.backend.rol.repository.RolRepository;
+import com.pulsespazio.academy.backend.rol.service.RolService;
 import java.util.List;
 import org.springframework.stereotype.Service;
 

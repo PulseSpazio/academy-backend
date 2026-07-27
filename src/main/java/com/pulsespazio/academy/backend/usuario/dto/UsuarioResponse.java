@@ -2,9 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.pulsespazio.academy.backend.entity;
+package com.pulsespazio.academy.backend.usuario.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,30 +13,26 @@ import lombok.Setter;
  *
  * @author Dany
  */
-
-
-
-@Entity
-@Table(name = "rol")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Rol {
+public class UsuarioResponse {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_rol")
-    private Long idRol;
+    private Long idUsuario;
 
-    @Column(name = "nombre", nullable = false, length = 50)
     private String nombre;
 
-    @Column(name = "descripcion", length = 200)
-    private String descripcion;
+    private String apellidoPaterno;
 
-    @Column(name = "activo", nullable = false)
+    private String apellidoMaterno;
+
+    private String correo;
+
     private Boolean activo;
 
+    private Long idRol;
+
+    private String nombreRol;
 
 }
