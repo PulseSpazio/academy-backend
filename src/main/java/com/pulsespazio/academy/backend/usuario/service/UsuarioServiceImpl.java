@@ -19,7 +19,6 @@ import org.springframework.stereotype.Service;
  *
  * @author Dany
  */
-
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 
@@ -28,8 +27,8 @@ public class UsuarioServiceImpl implements UsuarioService {
     private final UsuarioMapper usuarioMapper;
 
     public UsuarioServiceImpl(UsuarioRepository usuarioRepository,
-                              RolRepository rolRepository,
-                              UsuarioMapper usuarioMapper) {
+            RolRepository rolRepository,
+            UsuarioMapper usuarioMapper) {
 
         this.usuarioRepository = usuarioRepository;
         this.rolRepository = rolRepository;
@@ -79,16 +78,10 @@ public class UsuarioServiceImpl implements UsuarioService {
         Usuario usuario = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
-        Rol rol = rolRepository.findById(request.getIdRol())
-                .orElseThrow(() -> new RuntimeException("Rol no encontrado"));
+//        Rol rol = rolRepository.findById(request.getIdRol())
+//                .orElseThrow(() -> new RuntimeException("Rol no encontrado"));
 
-        usuario.setNombre(request.getNombre());
-        usuario.setApellidoPaterno(request.getApellidoPaterno());
-        usuario.setApellidoMaterno(request.getApellidoMaterno());
-        usuario.setCorreo(request.getCorreo());
-        usuario.setPassword(request.getPassword());
-        usuario.setActivo(request.getActivo());
-        usuario.setRol(rol);
+        usuarioMapper.updateEntity(request, usuario);
 
         usuario = usuarioRepository.save(usuario);
 

@@ -12,7 +12,6 @@ import com.pulsespazio.academy.backend.usuario.entity.Usuario;
  *
  * @author Dany
  */
-
 import org.springframework.stereotype.Component;
 
 @Component
@@ -57,6 +56,21 @@ public class UsuarioMapper {
         usuario.setActivo(request.getActivo());
 
         return usuario;
+    }
+
+    public void updateEntity(UsuarioRequest request, Usuario usuario) {
+
+        if (request == null || usuario == null) {
+            return;
+        }
+
+        usuario.setNombre(request.getNombre());
+        usuario.setApellidoPaterno(request.getApellidoPaterno());
+        usuario.setApellidoMaterno(request.getApellidoMaterno());
+        usuario.setCorreo(request.getCorreo());
+        usuario.setPassword(request.getPassword());
+        usuario.setActivo(request.getActivo());
+
     }
 
 }

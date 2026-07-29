@@ -14,9 +14,6 @@ import lombok.Setter;
  *
  * @author Dany
  */
-
-
-
 @Entity
 @Table(name = "rol")
 @Getter
@@ -38,6 +35,5 @@ public class Rol {
 
     @Column(name = "activo", nullable = false)
     private Boolean activo;
-
 
 }
